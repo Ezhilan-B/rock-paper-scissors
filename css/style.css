@@ -116,7 +116,7 @@ body {
     background-image: radial-gradient(circle at 50% 50%, hsl(230, 89%, 62%), hsl(230, 89%, 65%));
     padding: 20px;
     top: 50px;
-    left: 550px;
+    left: 37%;
     box-shadow: -1px 5px 0 hsl(231, 51%, 38%);
 }
 
@@ -129,7 +129,7 @@ body {
     background-image: radial-gradient(circle at 50% 50%, hsl(39, 89%, 49%), hsl(40, 84%, 53%));
     padding: 20px;
     top: 50px;
-    right: 550px;
+    right: 37%;
     box-shadow: -1px 5px 0 hsl(39, 86%, 27%);
 }
 
@@ -222,7 +222,13 @@ body {
     display: none;
 }
 
-.btn-text:hover {
+
+
+.btn-text {
+    color: rgb(14, 14, 14);
+}
+
+.btn-text:hover{
     color: red;
 }
 
