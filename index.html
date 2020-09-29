@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Skill Safari | Rock, Paper, Scissors</title>
+
+  <!-- Bootstrap 4 CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <!-- FontAwesone CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/js/all.min.js"
+    integrity="sha512-YSdqvJoZr83hj76AIVdOcvLWYMWzy6sJyIMic2aQz5kh2bPTd9dzY3NtdeEAzPp/PhgZqr4aJObB3ym/vsItMg=="
+    crossorigin="anonymous"></script>
+
+  <!-- Google-fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- custom css -->
+  <link rel="stylesheet" href="./css/style.css" type="text/css">
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <div class="outline mt-4 margin">
+        <div class="row m-2">
+          <div class=" col-6 align-items-center d-flex">
+            <img src="./images/logo.svg" class="img-fluid img-size" alt="">
+          </div>
+          <div class="col-6 align-items-center d-flex">
+            <div class="card ml-auto pb-1">
+              <div class="card-body pt-1 my-auto text-center">
+                <p class="score-text">SCORE</p>
+                <h2 id="score" class="score-number pt-0 my-0">0</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section id="step-1" class="icons">
+    <div class="container-fluid">
+      <div class="position-relative d-flex justify-content-center">
+        <img src="./images/bg-triangle.svg" class="img-fluid bg-triangle" alt="">
+        <a href="#" id="rock" onclick="fun(this)" class="rock p-4 rounded-circle">
+          <img src="./images/icon-rock.svg" class="img-fluid rounded-circle p-4 bg-white" alt="">
+        </a>
+        <a href="#" id="paper" onclick="fun(this)" class="paper p-4 rounded-circle">
+          <img src="./images/icon-paper.svg" class="img-fluid rounded-circle p-4 bg-white" alt="">
+        </a>
+        <a href="#" id="scissors" onclick="fun(this)" class="scissors p-4 rounded-circle">
+          <img src="./images/icon-scissors.svg" class="img-fluid rounded-circle p-4 bg-white" alt="">
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="position-relative">
+    <button type="button" data-toggle="modal" data-target="#rules"
+      class="btn btn-outline-light btn-align">RULES</button>
+  </section>
+
+  <!-- Modal Rules -->
+  <div class="modal modal-sm mx-auto" id="rules" role="dialog" aria-labelledby="rules" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="rules-label">RULES</h3>
+          <button type="button" class="close d-none d-md-flex" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true" class="my-auto"><img src="./images/icon-close.svg" alt="close icon"></span>
+          </button>
+        </div>
+        <div class="modal-body text-center">
+          <img src="./images/image-rules.svg" class="img-fluid" alt="rules">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="close d-md-none mx-auto" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true" class="my-auto"><img src="./images/icon-close.svg" alt="close icon"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section id="step-2">
+    <div class="margin">
+      <div class="row">
+        <div class="col-md-2 d-none d-md-block" id="before1"></div>
+        <div class="col-md-4 col-6" id="after1">
+          <h5 class="py-md-5 d-none d-md-block text-center text-light">YOU PICKED</h5>
+          <div id="user" class="pt-5 pt-md-0 d-flex mt-4 align-items-center justify-content-center">
+            <div class="paper1 p-md-4 pl-1 p-3 align-items-center rounded-circle" id="paper1">
+              <img class="p-md-5 p-4 rounded-circle bg-white" src="images/icon-paper.svg"></div>
+            <div class="rock1 justify-content-center p-md-4 p-3  align-items-center rounded-circle" id="rock1">
+              <img class="p-md-5 p-4 rounded-circle bg-white" src="images/icon-rock.svg">
+            </div>
+            <div class="scissors1 p-md-4 p-3 justify-content-center align-items-center rounded-circle" id="scissors1">
+              <img class="p-md-5 p-4 rounded-circle bg-white" src="images/icon-scissors.svg">
+            </div>
+          </div>
+          <h5 class="mt-5 pl-4 d-md-none text-light">YOU PICKED</h5>
+        </div>
+        <div class="d-none d-md-block text-center" id="after">
+          <div id="block" class="d-none-manual pt-5 mt-5">
+            <h2 id="result" class=" text-white mt-5 text-uppercase"></h2>
+            <a type="button" href="index.html" class="btn bg-white btn-text text-dark">PLAY AGAIN</a>
+          </div>
+        </div>
+        <div id="computer" class="col-md-4 col-6 text-center">
+          <h5 class="py-md-5 d-none d-md-block text-light">THE HOUSE PICKED</h5>
+          <div class="pt-5 pt-md-0 d-flex mt-4 align-items-center justify-content-center">
+            <div class="rounded-circle p-md-5 pl-1 p-4 align-items-center dark-bg"></div>
+          </div>
+          <h5 class="mt-5 d-md-none text-light">THE HOUSE PICKED</h5>
+        </div>
+        <div id="computer1" class="col-md-4 col-6 text-center d-none-manual">
+          <h5 class="py-md-5 d-none d-md-block text-light">THE HOUSE PICKED</h5>
+          <div class="pt-5 pt-md-0 d-flex mt-4 align-items-center justify-content-center">
+            <div class="paper1 p-md-4 pl-1 p-3 align-items-center rounded-circle" id="paper2">
+              <img class="p-md-5 p-4 rounded-circle bg-white" src="images/icon-paper.svg"></div>
+            <div class="rock1 justify-content-center p-md-4 p-3  align-items-center rounded-circle" id="rock2">
+              <img class="p-md-5 p-4 rounded-circle bg-white" src="images/icon-rock.svg">
+            </div>
+            <div class="scissors1 p-md-4 p-3 justify-content-center align-items-center rounded-circle" id="scissors2">
+              <img class="p-md-5 p-4 rounded-circle bg-white" src="images/icon-scissors.svg">
+            </div>
+          </div>
+          <h5 class="mt-5 pt-1 d-md-none py-0 text-light">THE HOUSE PICKED</h5>
+        </div>
+        <div class="col-md-2 d-none d-md-block" id="before"></div>
+      </div>
+      <div class="col-12 d-md-none text-center">
+        <div id="block1" class="d-none-manual mt-5"> 
+          <h2 id="result1" class=" text-white text-uppercase"></h2>
+          <a href="index.html" type="button" class="btn bg-white btn-text text-dark">PLAY AGAIN</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Bootstrap 4 Script -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+  </script>
+
+  <!-- Custom Script -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/7.3.0/math.min.js"
+    integrity="sha512-2Ckw3zmQU6j6oTB5XbhSnQYyRqPDoYKMTVbTllvPKi9Pg1+2V5tV8UXhpn9eGSWU/FHzCHl+t+AJJhFCxOs5Og=="
+    crossorigin="anonymous"></script>
+  <script src="./js/script.js"></script>
+</body>
+
+</html>
